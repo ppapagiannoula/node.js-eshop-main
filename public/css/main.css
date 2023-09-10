@@ -1,0 +1,460 @@
+/*----------RESET----------*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*---------- MAIN STYLING ----------*/
+body {
+  width: 100%;
+  height: 100vh;
+    background: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #46eefa, #5ffbf1);
+    font-size: 1vw;
+    line-height: 1.6em;
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+    overflow-x: hidden;
+    display: grid;
+    grid:min-content 1fr min-content / 1fr;
+}
+
+/* for the background */
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.logo {
+    padding-top: 20px;
+}
+
+/*---error---*/
+.error404 {
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    justify-content: center;
+    align-items: center;
+}
+
+.error404 h1 {
+    font-size: 60px;
+    padding: 20px;
+}
+
+/*---------- UTILITY CLASSES ----------*/
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+}
+
+.sect-wrap {
+    display: flex;
+    flex-direction: column;
+    font-family: secondfont;
+    width: 70%;
+    padding: 50px 50px;
+    position: relative;
+}
+
+.sect-title {
+    text-align: center;
+    font-family: firstfont;
+    font-size: 2em;
+    line-height: 2em;
+    text-shadow: 2px 2px 5px rgb(230, 152, 253);
+    margin: 50px;
+}
+
+.btn {
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    color: #650de8;
+    background: aliceblue;
+    border: 3px solid aliceblue;
+    padding: 13px 20px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: .5s ease;
+    width: fit-content;
+}
+
+.btn:hover {
+    border: 3px solid #650de8;
+}
+
+.box {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3s);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur;
+}
+
+.goods-box {
+    border-radius: 15px;
+    margin-bottom: 30px;
+    padding: 20px;
+    position: relative;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3s);
+}
+
+.btn.danger {
+    color: red;
+    border-color: red;
+}
+
+.btn.danger:hover,
+.btn.danger:active {
+    background: red;
+    color: white;
+}
+
+/* Navigation Bar */
+.header {
+  background-color: #ffffff;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo */
+.logo img {
+  width: 100px;
+  height: auto;
+}
+
+/* Main Navigation Items */
+.nav-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nav-items li {
+  list-style: none;
+  display: inline-block;
+  margin-right: 2rem;
+}
+
+.nav-items li:last-child {
+  margin-right: 0;
+}
+
+.nav-items li a {
+  text-decoration: none;
+  color: #333333;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+}
+
+.nav-items li a:hover {
+  color: #650de8;
+}
+
+/* User Dropdown Menu */
+.userbtn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  right: 0;
+  top: 40px;
+}
+
+.userbtn:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: #333333;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+  color: #650de8;
+}
+
+/* Sign Up Button */
+.signupbtn {
+  text-decoration: none;
+  color: #333333;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border: 2px solid #333333;
+  border-radius: 5px;
+  margin-right: 1rem;
+}
+
+.signupbtn:hover {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+
+
+/* --------------FOOTER--------------- */
+#footer {
+    background: #350779;
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+  }
+  
+  .footer-content {
+    margin-bottom: 20px;
+  }
+  
+  .footer-content img {
+    width: 80px;
+  }
+  
+  .socials {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .socials li {
+    margin: 0 10px;
+  }
+  
+  .socials a {
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+  }
+  
+  .socials a:hover {
+    color: #650de8;
+  }
+  
+  .footer-bottom {
+    background: #20034a;
+    padding: 20px 0;
+  }
+  
+  .footer-bottom p {
+    margin: 0;
+    font-size: 14px;
+  }
+  
+  .f-menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  .f-menu li {
+    margin: 0 10px;
+  }
+  
+  .f-menu a {
+    text-decoration: none;
+    color: white;
+  }
+  
+  .f-menu a:hover {
+    color: #650de8;
+  }
+
+/* --------------MERCH--------------- */
+.goods-inner {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 25px;
+}
+
+
+.goods-inner li {
+    list-style: none;
+    display: list-item;
+    text-align: center;
+}
+
+.goods-inner ul {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    padding-inline-start: 40px;
+}
+
+.goods-box a {
+    display: block;
+    background-color: transparent;
+}
+
+.goods-box img {
+    object-fit: cover;
+    object-position: center;
+}
+
+/*-----------HOMEPAGE-------------*/
+/*---------------- chacacter section ------------------*/
+/*-------card start-------*/
+.card {
+    position: relative;
+    width: 65%;
+    height: 330px;
+    display: flex;
+    align-items: center;
+    background: url(./img/card-background.png);
+    object-fit: cover;
+    object-position: center;
+}
+
+.card img {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-60%);
+    height: 400px;
+    transition: all .5s;
+}
+
+.card:hover img {
+    height: 450px;
+    left: 80%;
+}
+
+.card-content {
+    position: relative;
+    left: 20%;
+    opacity: 0;
+    transition: .5s;
+}
+
+.card:hover .card-content {
+    left: 5%;
+    opacity: 1;
+}
+
+.card-content a {
+    color: #650de8;
+    padding: 10px 10px;
+    text-decoration: none;
+    background: aliceblue;
+    border-radius: 3px;
+}
+
+.card-content p {
+    text-shadow: 2px 2px 5px rgb(230, 152, 253);
+    font-size: 1.1em;
+    transition: all .5s;
+    font-family: firstfont;
+}
+
+/*------card end-------*/
+
+/* --------------FORM--------------- */
+/* Form Container */
+.form-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-control {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+  background: rgba(0, 0, 0, 0.3);
+  color: white;
+  padding: 30px;
+  border-radius: 8px;
+  width: 400px;
+}
+
+.form-control h1 {
+  align-self: center;
+  padding-bottom: 10px;
+}
+
+.form-control > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.form-control > div > input,
+.form-control > div > textarea {
+  width: 100%;
+  border: none;
+  color: white;
+  border-bottom: 2px solid white;
+  background-color: transparent;
+  resize: none;
+}
+
+.form-control > div > input:focus,
+.form-control > div > textarea:focus {
+  outline: none;
+}
+
+.form-control label {
+  font-weight: bold;
+}
+
+.form-control select {
+  padding: 5px 10px;
+}
+.form-control select,
+.form-control button {
+  align-self: center;
+}
+
+
+.cart .btn {
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}

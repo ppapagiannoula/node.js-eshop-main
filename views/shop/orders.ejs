@@ -1,0 +1,27 @@
+<%- include('../includes/head.ejs') %>
+    <%- include('../includes/navigation.ejs') %>
+    <main>
+        <div class="orders">
+            <% if (orders.length> 0) { %>
+                <% for (let order of orders) { %>
+                    <ul>
+                        <% for (let prod of order.products) { %>
+                            <li>
+                                <h3>Product <%= prod.product.title %>
+                                </h3>
+                                <h3>Quantity <%= prod.quantity %>
+                                </h3>
+                            </li>
+                            <% } %>
+                    </ul>
+                    <% } %>
+                        <% }else { %>
+                            <h2>no orders</h2>
+                            <% } %>
+
+        </div>
+
+    </main>
+
+        <%- include('../includes/footer.ejs') %>
+            <%- include('../includes/end.ejs') %>

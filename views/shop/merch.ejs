@@ -1,0 +1,68 @@
+<%- include('../includes/head.ejs') %>
+    <%- include('../includes/navigation.ejs') %>
+    <main>
+
+        <div class="wrapper">
+            <% if (prods.length> 0) { %>
+                <div class="sect-wrap">
+                    <h2 class="sect-title">manga</h2>
+                    <div>
+                        <ul class="goods-inner">
+                            <% for ( let product of manga) { %>
+                                <li class="goods-box">
+                                    <a href=""><img src="<%= product.imageUrl %>" width="200"></a>
+                                    <p>
+                                        <%= product.title %>
+                                    </p>
+                                    <p>
+                                        <%= product.price %>
+                                    </p>
+                                    <!-- <p>
+                                        <%= product.description %>
+                                    </p> -->
+                                    <% if (isAuthenticated) { %>
+                                        <form action="add-to-cart" method="POST">
+                                            <input type="hidden" value="<%= product._id %>" name="productId">
+                                            <button type="submit" class="btn">add to cart</button>
+                                        </form>
+                                        <a href="admin/edit-product<%=product._id%>?edit=true">edit</a>
+                                        <% } %>
+                                </li>
+                                <% } %>
+                        </ul>
+                    </div>
+
+                    <h2 class="sect-title">figures</h2>
+                    <div>
+                        <ul class="goods-inner">
+                            <% for ( let product of figures) { %>
+                                <li class="goods-box">
+                                    <a href=""><img src="<%= product.imageUrl %>" width="200"></a>
+                                    <p>
+                                        <%= product.title %>
+                                    </p>
+                                    <p>
+                                        <%= product.price %>
+                                    </p>
+                                    <!-- <p>
+                                        <%= product.description %>
+                                    </p> -->
+                                    <% if (isAuthenticated) { %>
+                                        <form action="add-to-cart" method="POST">
+                                            <input type="hidden" value="<%= product._id %>" name="productId">
+                                            <button type="submit" class="btn">add to cart</button>
+                                        </form>
+                                        <a href="admin/edit-product<%=product._id%>?edit=true">edit</a>
+                                        <% } %>
+                                </li>
+                                <% } %>
+                        </ul>
+                    </div>
+                </div>
+                <% } %>
+        </div>
+        </div>
+    </main>
+
+        <%- include('../includes/footer.ejs') %>
+        <%- include('../includes/end.ejs') %>

@@ -1,0 +1,41 @@
+<%- include('../includes/head.ejs') %>
+
+    <%- include('../includes/navigation.ejs') %>
+
+        <main class="form-container">
+            <form class="form-control" action="/admin/<% if (editing) { %>edit-product<% } else { %>add-product<% } %>"
+                method="POST">
+                <div>
+                    <label for="title">Title</label>
+                    <input type="text" name="title" id="title" value="<% if (editing) { %><%= product.title %><% } %>">
+                </div>
+                <div>
+                    <label for="imageUrl">Image URL</label>
+                    <input type="text" name="imageUrl" id="imageUrl"
+                        value="<% if (editing) { %><%= product.imageUrl %><% } %>">
+                </div>
+                <div>
+                    <label for="price">Price</label>
+                    <input type="number" name="price" id="price" step="0.01"
+                        value="<% if (editing) { %><%= product.price %><% } %>">
+                </div>
+                <div>
+                    <label for="description">Description</label>
+                    <textarea name="description" id="description"><% if (editing) { %><%= product.description %><% } %></textarea>
+                </div>
+                <select name="category" class="btn">
+                    <option value="<%= product.category%>"><%=product.category%></option>
+                    <option value="manga">manga</option>
+                    <option value="figures">figures</option>
+                </select>
+                <% if (editing) { %>
+                    <input type="hidden" value="<%= product._id %>" name="productId">
+                    <% } %>
+
+                        <button class="btn" type="submit">
+                            <% if (editing) { %>Update Product<% } else { %>Add Product<% } %>
+                        </button>
+            </form>
+        </main>
+        <%- include('../includes/footer.ejs') %>
+        <%- include('../includes/end.ejs') %>

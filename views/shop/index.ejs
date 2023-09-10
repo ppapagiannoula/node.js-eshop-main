@@ -1,0 +1,42 @@
+<%- include('../includes/head.ejs') %>
+<%- include('../includes/navigation.ejs') %>
+<main>
+    <!---------- INFO SECTION ---------->
+    <section class="wrapper">
+      <!-- character section -->
+      <div class="sect-title">
+        <h3>vocaloid of the month</h3>
+      </div>
+  
+      <div class="card">
+        <div class="card-content">
+          <h2 class="sect-title">Hatsune Miku</h2>
+          <!-- <a class="btn" href="./about.html">meet more vocaloids</a> -->
+        </div>
+        <img src="./img/card.png" alt="card miku" />
+      </div>
+    </section>
+  
+    <!-- Display the most popular products -->
+    <div class="wrapper">
+      <% if (prods.length > 0) { %>
+      <div class="sect-wrap">
+        <h2 class="sect-title">Most Popular</h2>
+        <div>
+          <ul class="goods-inner">
+            <% for (let product of prods) { %>
+            <li class="goods-box">
+              <a href=""><img src="<%= product.imageUrl %>" width="200" /></a>
+              <p><%= product.title %></p>
+              <p><%= product.price %></p>
+            </li>
+            <% } %>
+          </ul>
+        </div>
+      </div>
+      <% } %>
+    </div>
+    </main>
+  
+<%- include('../includes/footer.ejs') %>
+<%- include('../includes/end.ejs') %>

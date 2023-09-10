@@ -1,0 +1,25 @@
+<%- include('../includes/head.ejs') %>
+    <%- include('../includes/navigation.ejs') %>
+
+
+        <div class="form-container">
+            <form class="form-control" id="contact-form" action="/login" method="POST">
+                    <h1>Log in</h1>
+                    <div>
+                        <input type="text" name="email" id="email">
+                        <label for="email">email</label>
+                    </div>
+                    <div>
+                        <input type="password" name="password" id="password">
+                        <label for="password">password</label>
+                    </div>
+                    <div>
+                        <button type="submit" class="btn">Log in</button>
+                    </div>
+                    <button class="btn">
+                        <a href="/reset">Reset Password</a>
+                    </button>
+                </form>
+        </div>
+        <%- include('../includes/footer.ejs') %>
+            <%- include('../includes/end.ejs') %>

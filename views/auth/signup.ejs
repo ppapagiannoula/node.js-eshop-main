@@ -1,0 +1,30 @@
+<%- include('../includes/head.ejs') %>
+    <%- include('../includes/navigation.ejs') %>
+
+        <div class="form-container">
+            <form class="form-control" id="contact-form" action="/signup" method="POST">
+                    <h1>Sign up</h1>
+                    <div>
+                        <input type="text" name="name" id="name">
+                        <label for="name">name</label>
+                    </div>
+                    <div>
+                        <input type="text" name="email" id="email">
+                        <label for="email">email</label>
+                    </div>
+                    <div>
+                        <input type="password" name="password" id="password">
+                        <label for="password">password</label>
+                    </div>
+                    <div>
+                        <input type="password" name="verpassword" id="verpassword">
+                        <label for="password">confirm your password</label>
+                    </div>
+                    <div>
+                        <button class="btn" type="submit">Sign up</button>
+                    </div>
+                </form>
+        </div>
+
+        <%- include('../includes/footer.ejs') %>φ
+        <%- include('../includes/end.ejs') %>φ

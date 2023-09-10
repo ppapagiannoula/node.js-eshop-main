@@ -1,0 +1,40 @@
+<header class="header">
+  <nav class="navbar">
+    <div class="logo">
+      <a href="/"><img src="/img/logo.png" alt="logo" width="100" /></a>
+    </div>
+    <div class="nav-container">
+      <ul class="nav-items">
+        <li>
+          <a class="<%= path === '/' ? 'active' : '' %>" href="/">Home</a>
+        </li>
+        <li>
+          <a
+            class="<%= path === '/products' ? 'active' : '' %>"
+            href="/products"
+            >Merch</a
+          >
+        </li>
+      </ul>
+    </div>
+    <div class="user">
+      <% if (!isAuthenticated) { %>
+      <a class="signupbtn" href="/login"
+        >login</a>
+      <a class="signupbtn" href="/signup">Sign Up</a>
+      <% } else { %>
+      <div class="userbtn">
+        <i class="fa-regular fa-user fa-2x"></i>
+        <div class="dropdown-content">
+          <a href="/cart">Cart</a>
+          <a href="/orders">Orders</a>
+          <a href="/admin/addProduct">AddProduct</a>
+          <form action="/logout" method="POST">
+            <button type="submit" class="btn">Logout</button>
+          </form>
+        </div>
+      </div>
+      <% } %>
+    </div>
+  </nav>
+</header>
